@@ -174,7 +174,7 @@ public class AIManager : MonoBehaviour {
         }
         else if (popularity_value >= 11 && popularity_value <= 70)
         {
-            if (random_spawn <= 8)
+            if (random_spawn <= 2)
             {
                 //Spawn
                 GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();

@@ -965,7 +965,7 @@ MonoBehaviour:
   popularity_slider: {fileID: 1852306830}
   quality_slider: {fileID: 287249947}
   copyright_slider: {fileID: 1420514802}
-  VideoUI: {fileID: 1721367756}
+  VideoUI: {fileID: 0}
   tick: 8
   days: 0
 --- !u!4 &168052503
@@ -12882,11 +12882,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 270332805}
   m_GameObject: {fileID: 1718352518}
   m_CullTransparentMesh: 0
---- !u!223 &1721367756 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 223497266465799046, guid: 153565fb309a7824eaa76ec28fe5a1d4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1909905260}
 --- !u!1001 &1730961178
 Prefab:
   m_ObjectHideFlags: 0
@@ -15038,6 +15033,41 @@ Prefab:
     - target: {fileID: 223497266465799046, guid: 153565fb309a7824eaa76ec28fe5a1d4,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224639775246495466, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223598937632043474, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224819915303745102, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224819915303745102, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224954795621738748, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224954795621738748, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224954795621738748, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
