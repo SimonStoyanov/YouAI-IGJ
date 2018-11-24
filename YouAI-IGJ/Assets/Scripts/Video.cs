@@ -22,18 +22,31 @@ public class Video : MonoBehaviour {
     public bool[] quality = new bool[4];
     public Category category = Category.Entertainment;
     public string author = "name";
+    public bool is_trending = false;
 
-    int num_sprites = 11;
+    int num_sprites = 27;
     public int[] sprite_id = new int[3];
     public Sprite[] video = new Sprite[3];
 
     bool entered_video = false;
     int video_id_shown = 0;
 
+    public Video(bool is_trending, float global_time)
+    {
+        this.is_trending = is_trending;
+        this.global_time = global_time;
+    }
+
     private void Awake()
     {
+        // Initialize Quality
         for (int i = 0; i < 4; ++i)
-            quality[i] = false;
+        {
+            if (is_trending)
+                quality[i] = true;
+            else
+                quality[i] = false;
+        }
 
         // Random Sprite ID Generator
         for (int i = 0; i < 3; ++i)
@@ -56,19 +69,22 @@ public class Video : MonoBehaviour {
         category = (Category) Random.Range(0, 3);
 
         // Random Quality Generator
-        int rand_quality = Random.Range(0, 3);
-        switch (rand_quality)
+        if (!is_trending)
         {
-            case 0:
-                quality[0] = quality[1] = true;
-                break;
-            case 1:
-                quality[2] = quality[3] = true;
-                break;
-            case 2:
-                quality[0] = quality[1] = quality[2] = quality[3] = true;
-                break;
-        }
+            int rand_quality = Random.Range(0, 3);
+            switch (rand_quality)
+            {
+                case 0:
+                    quality[0] = quality[1] = true;
+                    break;
+                case 1:
+                    quality[2] = quality[3] = true;
+                    break;
+                case 2:
+                    quality[0] = quality[1] = quality[2] = quality[3] = true;
+                    break;
+            }
+        }       
 
         // Sprite Setter by ID
         for (int i = 0; i < 3; ++i)
@@ -128,6 +144,15 @@ public class Video : MonoBehaviour {
     IEnumerator TimeLeft()
     {
         yield return new WaitForSeconds(global_time);
-        print("DELETE VIDEO");
+
+        Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
+
+        if (quality[0] && quality[1])
+            quality_slider.value -= 0.1f;
+        else if (quality[2] && quality[3])
+            quality_slider.value += 0.1f;
+
+        entered_video = false;
+        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
     }
 }
