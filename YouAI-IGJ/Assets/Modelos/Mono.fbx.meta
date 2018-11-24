@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: 600f5024edca1b94bba71d5d1c4c8d62
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: joint10
+    100002: joint11
+    100004: joint12
+    100006: joint13
+    100008: joint14
+    100010: joint15
+    100012: joint16
+    100014: joint17
+    100016: joint2
+    100018: joint22
+    100020: joint23
+    100022: joint24
+    100024: joint25
+    100026: joint26
+    100028: joint27
+    100030: joint29
+    100032: joint3
+    100034: joint30
+    100036: joint31
+    100038: joint32
+    100040: joint33
+    100042: joint34
+    100044: joint35
+    100046: joint36
+    100048: joint37
+    100050: joint38
+    100052: joint39
+    100054: joint4
+    100056: joint40
+    100058: joint43
+    100060: joint44
+    100062: joint45
+    100064: joint5
+    100066: joint6
+    100068: joint7
+    100070: joint8
+    100072: joint9
+    100074: //RootNode
+    100076: nurbsCircle1
+    100078: nurbsCircle10
+    100080: nurbsCircle11
+    100082: nurbsCircle12
+    100084: nurbsCircle13
+    100086: nurbsCircle14
+    100088: nurbsCircle15
+    100090: nurbsCircle16
+    100092: nurbsCircle17
+    100094: nurbsCircle18
+    100096: nurbsCircle19
+    100098: nurbsCircle2
+    100100: nurbsCircle20
+    100102: nurbsCircle20 1
+    100104: nurbsCircle21
+    100106: nurbsCircle21 1
+    100108: nurbsCircle22
+    100110: nurbsCircle22 1
+    100112: nurbsCircle23
+    100114: nurbsCircle23 1
+    100116: nurbsCircle24
+    100118: nurbsCircle24 1
+    100120: nurbsCircle25
+    100122: nurbsCircle26
+    100124: nurbsCircle3
+    100126: nurbsCircle4
+    100128: nurbsCircle5
+    100130: nurbsCircle6
+    100132: nurbsCircle7
+    100134: nurbsCircle8
+    100136: nurbsCircle9
+    100138: pCube1
+    100140: polySurface1
+    400000: joint10
+    400002: joint11
+    400004: joint12
+    400006: joint13
+    400008: joint14
+    400010: joint15
+    400012: joint16
+    400014: joint17
+    400016: joint2
+    400018: joint22
+    400020: joint23
+    400022: joint24
+    400024: joint25
+    400026: joint26
+    400028: joint27
+    400030: joint29
+    400032: joint3
+    400034: joint30
+    400036: joint31
+    400038: joint32
+    400040: joint33
+    400042: joint34
+    400044: joint35
+    400046: joint36
+    400048: joint37
+    400050: joint38
+    400052: joint39
+    400054: joint4
+    400056: joint40
+    400058: joint43
+    400060: joint44
+    400062: joint45
+    400064: joint5
+    400066: joint6
+    400068: joint7
+    400070: joint8
+    400072: joint9
+    400074: //RootNode
+    400076: nurbsCircle1
+    400078: nurbsCircle10
+    400080: nurbsCircle11
+    400082: nurbsCircle12
+    400084: nurbsCircle13
+    400086: nurbsCircle14
+    400088: nurbsCircle15
+    400090: nurbsCircle16
+    400092: nurbsCircle17
+    400094: nurbsCircle18
+    400096: nurbsCircle19
+    400098: nurbsCircle2
+    400100: nurbsCircle20
+    400102: nurbsCircle20 1
+    400104: nurbsCircle21
+    400106: nurbsCircle21 1
+    400108: nurbsCircle22
+    400110: nurbsCircle22 1
+    400112: nurbsCircle23
+    400114: nurbsCircle23 1
+    400116: nurbsCircle24
+    400118: nurbsCircle24 1
+    400120: nurbsCircle25
+    400122: nurbsCircle26
+    400124: nurbsCircle3
+    400126: nurbsCircle4
+    400128: nurbsCircle5
+    400130: nurbsCircle6
+    400132: nurbsCircle7
+    400134: nurbsCircle8
+    400136: nurbsCircle9
+    400138: pCube1
+    400140: polySurface1
+    2100000: blinn1
+    2100002: lambert1
+    2300000: pCube1
+    3300000: pCube1
+    4300000: polySurface1
+    4300002: pCube1
+    7400000: Levantarse
+    7400002: Alerta
+    7400004: Sentarse
+    7400006: Idle
+    9500000: //RootNode
+    13700000: polySurface1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Levantarse
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Alerta
+      takeName: Take 001
+      firstFrame: 42
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sentarse
+      takeName: Take 001
+      firstFrame: 72
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
