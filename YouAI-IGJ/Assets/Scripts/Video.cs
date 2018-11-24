@@ -140,14 +140,12 @@ public class Video : MonoBehaviour {
         }
 
         // Video
-        // if (clicked){
-        if (Input.GetKeyDown(KeyCode.F2))
+        if (!entered_video && is_trending)
         {
             entered_video = true;
             StartCoroutine(VideoSequence());
         }
-        // }
-	}
+    }
 
     void Debugging()
     {   
@@ -160,7 +158,7 @@ public class Video : MonoBehaviour {
     }
 
     IEnumerator VideoSequence()
-    {
+    {       
         while (entered_video)
         {
             yield return new WaitForSecondsRealtime(slide_time);
@@ -215,7 +213,8 @@ public class Video : MonoBehaviour {
                 {
                     if (v.sprite_id[i] == sprite_id[j])
                     {
-                        return true;
+                        if (v.author != author)
+                            return true;
                     }
                 }
             }

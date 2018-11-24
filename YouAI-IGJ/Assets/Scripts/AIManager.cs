@@ -167,15 +167,17 @@ public class AIManager : MonoBehaviour {
         if (popularity_value >= 0 && popularity_value <= 10)
         {
             if (random_spawn <= 6)
-            {    
+            {
                 //Spawn
+                GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();
             }
         }
         else if (popularity_value >= 11 && popularity_value <= 70)
         {
-            if (random_spawn <= 2)
+            if (random_spawn <= 8)
             {
                 //Spawn
+                GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();
             }
         }
         else if (popularity_value >= 71 && popularity_value <= 100)
@@ -183,11 +185,12 @@ public class AIManager : MonoBehaviour {
             if (random_spawn <= 4)
             {
                 //Spawn
+                GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();
             }
         }
     }
 
-    public void RenderCanvas()
+    public void RenderCanvas(Video video)
     {
         VideoUI.enabled = true;
     }
