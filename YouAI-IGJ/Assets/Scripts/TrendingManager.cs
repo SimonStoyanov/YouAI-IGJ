@@ -8,27 +8,44 @@ public class TrendingManager : MonoBehaviour {
     int[] tick = new int[6];
     int[] ticks_left = new int[6];
 
+    AIManager ai_manager;
+    int seconds_a_day = 180;
+
     private void Awake()
     {
         // Initializing Tick
         for (int i = 0; i < 6; ++i)
             tick[i] = 0;
 
+        ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>(); 
     }
+
     // Use this for initialization
     void Start () {
-        trending_videos[0].GenerateData();
-        StartCoroutine(Tick(0));
-
-	}
+        CreateTrendingVideo();
+        StartCoroutine(WaitAndCreate(seconds_a_day * 3));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 5));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 6));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 7));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 8));
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
     void CreateTrendingVideo()
     {
+        for (int i = 0; i < 6; ++i)
+        {
+            if (trending_videos[i].video[0] == null)
+            {
+                trending_videos[i].GenerateData();
+                StartCoroutine(Tick(i));
+                return;
+            }
+        }
         
     }
 
@@ -44,5 +61,11 @@ public class TrendingManager : MonoBehaviour {
                 trending_videos[i].GenerateData();
             }
         }
+    }
+
+    IEnumerator WaitAndCreate(int i)
+    {
+        yield return new WaitForSecondsRealtime(i);
+        CreateTrendingVideo();
     }
 }

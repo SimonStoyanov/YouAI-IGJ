@@ -167,7 +167,8 @@ public class Video : MonoBehaviour {
             if (video_id_shown == 2) video_id_shown = 0;
             else video_id_shown++;
 
-            GetComponent<Image>().sprite = video[video_id_shown];
+            if (GetComponent<Image>() != null)
+                GetComponent<Image>().sprite = video[video_id_shown];
         }
     }
 

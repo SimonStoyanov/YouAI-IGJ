@@ -16,7 +16,7 @@ public class AIManager : MonoBehaviour {
 
     int ticks_done = 0;
     int ticks_a_day = 30;
-    int days = 0;
+    public int days = 0;
 
     bool recovering_infringement = false;
     int infringement_ticks = 0;

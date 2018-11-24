@@ -659,7 +659,8 @@ MonoBehaviour:
   quality_slider: {fileID: 287249947}
   copyright_slider: {fileID: 1420514802}
   VideoUI: {fileID: 1721367756}
-  tick: 10
+  tick: 8
+  days: 0
 --- !u!4 &168052503
 Transform:
   m_ObjectHideFlags: 0
