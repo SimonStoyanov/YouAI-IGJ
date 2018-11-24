@@ -902,7 +902,7 @@ MonoBehaviour:
   category: 0
   author: name
   copyrighted: 0
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -3195,6 +3195,7 @@ MonoBehaviour:
   popularity_slider: {fileID: 1852306830}
   quality_slider: {fileID: 287249947}
   copyright_slider: {fileID: 1420514802}
+  tick: 10
 --- !u!1001 &1176734164
 Prefab:
   m_ObjectHideFlags: 0
@@ -4085,7 +4086,7 @@ MonoBehaviour:
   category: 0
   author: name
   copyrighted: 0
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}

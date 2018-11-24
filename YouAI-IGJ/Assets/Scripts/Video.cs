@@ -41,6 +41,9 @@ public class Video : MonoBehaviour {
     }
 
     void Start () {
+        // Random Author Generator
+        author = GenerateName();
+
         // Random Category Generator
         category = (Category) Random.Range(0, 3);    
 
@@ -175,7 +178,29 @@ public class Video : MonoBehaviour {
         Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
 
         entered_video = false;
-        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
+
+        if (!is_trending)
+        {
+            GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
+            GetComponent<Image>().sprite = null;
+            EraseVideo();
+        }
+    }
+
+    string GenerateName()
+    {
+        string name;
+
+        string[] base_names = { "Pixel", "Cat", "Wizard", "Mago", "Key", "Banana", "Platano", "Monkey", "Ventisca", "Fresco", "Pizza", "Timmy", "Knuckles", "CuatroDos", "Vapor", "Global", "Simio", "Primate", "Leyenda", "Papaya" };
+        string[] complement_names = { "Studios", "Arts", "United", "Interactive", "Enterteinment", "Media", "Solutions", "Industries", "Productions", "Games" };
+
+        int name_id = Random.Range(0, base_names.Length);
+
+        int complement_id = Random.Range(0, complement_names.Length);
+
+        name = base_names[name_id] + " " + complement_names[complement_id];
+
+        return name;
     }
 
     bool IsCopyrighted()
@@ -196,5 +221,14 @@ public class Video : MonoBehaviour {
         }
 
         return false;
+    }
+
+    void EraseVideo()
+    {
+        video[0] = null;
+        video[1] = null;
+        video[2] = null;
+
+        Start();
     }
 }

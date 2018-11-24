@@ -10,10 +10,22 @@ public class AIManager : MonoBehaviour {
     public Slider quality_slider;
     public Slider copyright_slider;
 
+    public int tick = 10;
+    bool playing = true;
+
+    int ticks_done = 0;
+    int ticks_a_day = 30;
+    int days = 0;
+
+    bool recovering_infringement = false;
+    int infringement_ticks = 0;
+    int ticks_to_recover = 90;
+    int days_left = 3;
 
     private void Start()
     {
         //CreateVideo(false, 30);
+
     }
 
     public void AddToTrending(Video video)
@@ -45,9 +57,11 @@ public class AIManager : MonoBehaviour {
         if (video.copyrighted)
         {
             copyright_slider.value += 1;
+            infringement_ticks = 0;
+            recovering_infringement = true;
+            days_left = 3;
         }
     }
-
 
     void CreateVideo(bool is_trending, float global_time)
     {
@@ -88,5 +102,56 @@ public class AIManager : MonoBehaviour {
         }
 
         return num;
+    }
+
+    IEnumerator Tick()
+    {
+        while (playing)
+        {
+            yield return new WaitForSecondsRealtime(tick);
+
+            TickPopularity();
+            TickCopyright();
+        }
+    }
+
+    void TickPopularity()
+    {
+        float quality_value = quality_slider.value;
+
+        if (quality_value >= 0 && quality_value <= 20)
+            popularity_slider.value -= 3;
+        else if (quality_value >= 21 && quality_value <= 40)
+            popularity_slider.value -= 2;
+        else if (quality_value >= 61 && quality_value <= 71)
+            popularity_slider.value -= 1;
+        else if (quality_value >= 71 && quality_value <= 100)
+            popularity_slider.value -= 2;
+    }
+
+    void TickCopyright()
+    {
+        ticks_done++;
+
+        if (ticks_done % ticks_a_day == 0)
+            days++;
+
+        if (recovering_infringement)
+        {
+            infringement_ticks++;
+
+            if (infringement_ticks % ticks_a_day == 0)
+            {
+                days_left -= 1;
+            }
+
+            if (infringement_ticks % ticks_to_recover == 0)
+            {
+                copyright_slider.value -= 1;
+                if (copyright_slider.value == 0)
+                    recovering_infringement = false;
+            }
+        }
+
     }
 }
