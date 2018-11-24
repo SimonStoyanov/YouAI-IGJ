@@ -8,29 +8,7 @@ public class AIManager : MonoBehaviour {
 
     public void AddToTrending(Video video)
     {
-        int list_size = trending_videos.Count * 3;
-        int[] id_pool = new int[list_size];
-        int id = 0;
-
-        foreach (Video v in trending_videos)
-        {
-            for (int i = 0; i < 3; ++i)
-            {
-                id_pool[id++] = v.sprite_id[i];
-            }
-        }
-
-        for (int i = 0; i < list_size; ++i)
-        {
-            for (int j = 0; j < 3; ++j)
-            {
-                if (id_pool[i] == video.sprite_id[j])
-                {
-
-                }
-            }
-        }
-
+        trending_videos.Add(video);
     }
 
 	public void SendReport(Video video)
@@ -44,14 +22,27 @@ public class AIManager : MonoBehaviour {
         //Video video = new Video(is_trending, global_time);
     }
 
-    void ExcludingRandom(int min, int max, int[] int_pool)
+    public int ExcludingRandom(int min, int max)
     {
+        int num = 0;
+        int list_size = trending_videos.Count * 3;
+        int[] id_pool = new int[list_size];
+        int id = 0;
+
+        foreach (Video v in trending_videos)
+        {
+            for (int i = 0; i < 3; ++i)
+            {
+                id_pool[id++] = v.sprite_id[i];
+            }
+        }
+
         while (true)
         {
             bool is_repeated = false;
-            int num = Random.Range(min, max);
+            num = Random.Range(min, max);
             
-            foreach (int i in int_pool)
+            foreach (int i in id_pool)
             {
                 if (num == i)
                     is_repeated = true;
@@ -60,5 +51,7 @@ public class AIManager : MonoBehaviour {
             if (!is_repeated)
                 break;
         }
+
+        return num;
     }
 }

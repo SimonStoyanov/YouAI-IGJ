@@ -24,15 +24,19 @@ public class Video : MonoBehaviour {
     public string author = "name";
     public bool is_trending = false;
 
-    int num_sprites = 27;
+    int num_sprites = 42;
     public int[] sprite_id = new int[3];
     public Sprite[] video = new Sprite[3];
 
     bool entered_video = false;
     int video_id_shown = 0;
 
+    AIManager ai_manager;
+
     private void Awake()
     {
+        ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+
         // Initialize Quality
         for (int i = 0; i < 4; ++i)
         {
@@ -43,19 +47,41 @@ public class Video : MonoBehaviour {
         }
 
         // Random Sprite ID Generator
-        for (int i = 0; i < 3; ++i)
+        if (!is_trending)
         {
-            int tmp_id = Random.Range(0, num_sprites);
-
-            for (int j = 0; j < 3;)
+            for (int i = 0; i < 3; ++i)
             {
-                if (tmp_id != sprite_id[j])
-                    j++;
-                else
-                    tmp_id = Random.Range(0, num_sprites);
+                int tmp_id = Random.Range(0, num_sprites);
+
+                for (int j = 0; j < 3;)
+                {
+                    if (tmp_id != sprite_id[j])
+                        j++;
+                    else
+                        tmp_id = Random.Range(0, num_sprites);
+                }
+                sprite_id[i] = tmp_id;
             }
-            sprite_id[i] = tmp_id;
         }
+        else
+        {
+            for (int i = 0; i < 3; ++i)
+            {
+                int tmp_id = ai_manager.ExcludingRandom(0, num_sprites);
+
+                for (int j = 0; j < 3;)
+                {
+                    if (tmp_id != sprite_id[j])
+                        j++;
+                    else
+                        tmp_id = ai_manager.ExcludingRandom(0, num_sprites);
+                }
+                sprite_id[i] = tmp_id;
+            }
+        }
+
+        if (is_trending)
+            ai_manager.AddToTrending(this);
     }
 
     void Start () {
@@ -127,7 +153,7 @@ public class Video : MonoBehaviour {
     {
         while (entered_video)
         {
-            yield return new WaitForSeconds(slide_time);
+            yield return new WaitForSecondsRealtime(slide_time);
             if (video_id_shown == 2) video_id_shown = 0;
             else video_id_shown++;
 
@@ -137,7 +163,7 @@ public class Video : MonoBehaviour {
 
     IEnumerator TimeLeft()
     {
-        yield return new WaitForSeconds(global_time);
+        yield return new WaitForSecondsRealtime(global_time);
 
         Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
 

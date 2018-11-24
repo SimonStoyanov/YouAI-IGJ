@@ -274,7 +274,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -899,7 +899,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -2390,7 +2390,6 @@ GameObject:
   - component: {fileID: 793635972}
   - component: {fileID: 793635971}
   - component: {fileID: 793635970}
-  - component: {fileID: 793635969}
   m_Layer: 5
   m_Name: Trending Panel
   m_TagString: Untagged
@@ -2417,18 +2416,6 @@ RectTransform:
   m_AnchoredPosition: {x: 414.59268, y: 5.3242946}
   m_SizeDelta: {x: 1147, y: 537}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &793635969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 793635967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6280cf94e019214dba4d98e55b8ff55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trending_videos: []
 --- !u!114 &793635970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2753,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -2858,7 +2845,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
@@ -3106,8 +3093,8 @@ GameObject:
   - component: {fileID: 1154742937}
   - component: {fileID: 1154742941}
   m_Layer: 5
-  m_Name: AI TRacker
-  m_TagString: Untagged
+  m_Name: AI Tracker
+  m_TagString: AITracker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4089,7 +4076,7 @@ MonoBehaviour:
   quality: 00000000
   category: 0
   author: name
-  is_trending: 0
+  is_trending: 1
   sprite_id: 000000000000000000000000
   video:
   - {fileID: 0}
