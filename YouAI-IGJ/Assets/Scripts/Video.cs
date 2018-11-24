@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +15,9 @@ public class Video : MonoBehaviour {
         NULL
     }
 
+    public float global_time = 30f;
+    public float slide_time = 2f;
+
     // 144p, 360p, 720p, 1080p
     public bool[] quality = new bool[4];
     public Category category = Category.Entertainment;
@@ -24,6 +26,9 @@ public class Video : MonoBehaviour {
     int num_sprites = 11;
     public int[] sprite_id = new int[3];
     public Sprite[] video = new Sprite[3];
+
+    bool entered_video = false;
+    int video_id_shown = 0;
 
     private void Awake()
     {
@@ -71,14 +76,31 @@ public class Video : MonoBehaviour {
             string sprite_path = "Image_" + sprite_id[i];
             video[i] = Resources.Load<Sprite>(sprite_path);
         }
+
+        GetComponent<Image>().sprite = video[0];
+
+        StartCoroutine(TimeLeft());
     }
 
     bool debugging = false;
-    void Update () {
-        if (Input.GetKeyDown(KeyCode.F1))
-            debugging = true;
-        if (debugging)
-            Debugging();
+    void Update()
+    {
+        // Debug
+        {
+            if (Input.GetKeyDown(KeyCode.F1))
+                debugging = true;
+            if (debugging)
+                Debugging();
+        }
+
+        // Video
+        // if (clicked){
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            entered_video = true;
+            StartCoroutine(VideoSequence());
+        }
+        // }
 	}
 
     void Debugging()
@@ -91,4 +113,21 @@ public class Video : MonoBehaviour {
         debugging = false;
     }
 
+    IEnumerator VideoSequence()
+    {
+        while (entered_video)
+        {
+            yield return new WaitForSeconds(slide_time);
+            if (video_id_shown == 2) video_id_shown = 0;
+            else video_id_shown++;
+
+            GetComponent<Image>().sprite = video[video_id_shown];
+        }
+    }
+
+    IEnumerator TimeLeft()
+    {
+        yield return new WaitForSeconds(global_time);
+        print("DELETE VIDEO");
+    }
 }
