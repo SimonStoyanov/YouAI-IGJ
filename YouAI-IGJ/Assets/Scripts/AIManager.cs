@@ -22,7 +22,7 @@ public class AIManager : MonoBehaviour {
 
         for (int i = 0; i < list_size; ++i)
         {
-            for (int j = 0; j < 3;)
+            for (int j = 0; j < 3; ++j)
             {
                 if (id_pool[i] == video.sprite_id[j])
                 {
@@ -30,7 +30,7 @@ public class AIManager : MonoBehaviour {
                 }
             }
         }
-        
+
     }
 
 	public void SendReport(Video video)
@@ -41,6 +41,24 @@ public class AIManager : MonoBehaviour {
 
     void CreateVideo(bool is_trending, float global_time)
     {
-        Video video = new Video(is_trending, global_time);
+        //Video video = new Video(is_trending, global_time);
+    }
+
+    void ExcludingRandom(int min, int max, int[] int_pool)
+    {
+        while (true)
+        {
+            bool is_repeated = false;
+            int num = Random.Range(min, max);
+            
+            foreach (int i in int_pool)
+            {
+                if (num == i)
+                    is_repeated = true;
+            }
+
+            if (!is_repeated)
+                break;
+        }
     }
 }

@@ -31,12 +31,6 @@ public class Video : MonoBehaviour {
     bool entered_video = false;
     int video_id_shown = 0;
 
-    public Video(bool is_trending, float global_time)
-    {
-        this.is_trending = is_trending;
-        this.global_time = global_time;
-    }
-
     private void Awake()
     {
         // Initialize Quality
