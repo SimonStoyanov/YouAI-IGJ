@@ -643,7 +643,6 @@ MonoBehaviour:
   - {fileID: 118025177}
   - {fileID: 196527958}
   - {fileID: 1391326819}
-  day: 0
 --- !u!114 &168052502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +658,7 @@ MonoBehaviour:
   popularity_slider: {fileID: 1852306830}
   quality_slider: {fileID: 287249947}
   copyright_slider: {fileID: 1420514802}
+  VideoUI: {fileID: 1721367756}
   tick: 10
 --- !u!4 &168052503
 Transform:
@@ -2656,11 +2656,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 223706198866745554, guid: b7e52cec074a61e42bfece9682ebaf7f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e52cec074a61e42bfece9682ebaf7f, type: 2}
@@ -7415,6 +7410,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e52cec074a61e42bfece9682ebaf7f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!223 &1721367756 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223497266465799046, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1909905260}
 --- !u!1001 &1730961178
 Prefab:
   m_ObjectHideFlags: 0
@@ -8488,6 +8488,11 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223497266465799046, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153565fb309a7824eaa76ec28fe5a1d4, type: 2}
   m_IsPrefabAsset: 0
@@ -9065,6 +9070,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028413526114922, guid: b7e52cec074a61e42bfece9682ebaf7f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 168052502}
+    - target: {fileID: 223706198866745554, guid: b7e52cec074a61e42bfece9682ebaf7f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028413526114922, guid: b7e52cec074a61e42bfece9682ebaf7f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RenderCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e52cec074a61e42bfece9682ebaf7f, type: 2}

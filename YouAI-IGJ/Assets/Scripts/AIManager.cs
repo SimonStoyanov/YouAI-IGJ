@@ -9,6 +9,7 @@ public class AIManager : MonoBehaviour {
     public Slider popularity_slider;
     public Slider quality_slider;
     public Slider copyright_slider;
+    public Canvas VideoUI;
 
     public int tick = 10;
     bool playing = true;
@@ -184,5 +185,10 @@ public class AIManager : MonoBehaviour {
                 //Spawn
             }
         }
+    }
+
+    public void RenderCanvas()
+    {
+        VideoUI.enabled = true;
     }
 }
