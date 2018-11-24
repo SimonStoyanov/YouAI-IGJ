@@ -25,7 +25,7 @@ public class AIManager : MonoBehaviour {
     private void Start()
     {
         //CreateVideo(false, 30);
-
+        StartCoroutine(Tick());
     }
 
     public void AddToTrending(Video video)
@@ -112,6 +112,7 @@ public class AIManager : MonoBehaviour {
 
             TickPopularity();
             TickCopyright();
+            TickSpawnVideo();
         }
     }
 
@@ -153,5 +154,35 @@ public class AIManager : MonoBehaviour {
             }
         }
 
+    }
+
+    void TickSpawnVideo()
+    {
+        float popularity_value = popularity_slider.value;
+        int random_spawn = Random.Range(0, 10);
+
+        // There should be space left to spawn
+
+        if (popularity_value >= 0 && popularity_value <= 10)
+        {
+            if (random_spawn <= 6)
+            {    
+                //Spawn
+            }
+        }
+        else if (popularity_value >= 11 && popularity_value <= 70)
+        {
+            if (random_spawn <= 2)
+            {
+                //Spawn
+            }
+        }
+        else if (popularity_value >= 71 && popularity_value <= 100)
+        {
+            if (random_spawn <= 4)
+            {
+                //Spawn
+            }
+        }
     }
 }

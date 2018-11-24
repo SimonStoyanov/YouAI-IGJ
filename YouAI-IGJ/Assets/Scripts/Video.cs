@@ -40,7 +40,7 @@ public class Video : MonoBehaviour {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
     }
 
-    void Start () {
+    public void GenerateData () {
         // Random Author Generator
         author = GenerateName();
 
@@ -229,6 +229,6 @@ public class Video : MonoBehaviour {
         video[1] = null;
         video[2] = null;
 
-        Start();
+        GenerateData();
     }
 }

@@ -59,11 +59,11 @@ public class VideoUIManager : MonoBehaviour {
         }
     }
 
-    public void SetCategory(int Category)//0 enterteinment, 1 Comedy, 2 Critic
+    public void SetCategory(int Category)//0 entertainment, 1 Comedy, 2 Critic
     {
         if (Category == 0)
         {
-            category_text.GetComponent<Text>().text = "#Enterteinment";
+            category_text.GetComponent<Text>().text = "#Entertainment";
         }
         else if (Category == 1)
         {
