@@ -22,6 +22,8 @@ public class Video : MonoBehaviour {
     public bool[] quality = new bool[4];
     public Category category = Category.Entertainment;
     public string author = "name";
+    public bool copyrighted = false;
+
     public bool is_trending = false;
 
     int num_sprites = 42;
@@ -36,15 +38,11 @@ public class Video : MonoBehaviour {
     private void Awake()
     {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+    }
 
-        // Initialize Quality
-        for (int i = 0; i < 4; ++i)
-        {
-            if (is_trending)
-                quality[i] = true;
-            else
-                quality[i] = false;
-        }
+    void Start () {
+        // Random Category Generator
+        category = (Category) Random.Range(0, 3);    
 
         // Random Sprite ID Generator
         if (!is_trending)
@@ -80,13 +78,14 @@ public class Video : MonoBehaviour {
             }
         }
 
-        if (is_trending)
-            ai_manager.AddToTrending(this);
-    }
-
-    void Start () {
-        // Random Category Generator
-        category = (Category) Random.Range(0, 3);
+        // Initialize Quality
+        for (int i = 0; i < 4; ++i)
+        {
+            if (is_trending)
+                quality[i] = true;
+            else
+                quality[i] = false;
+        }
 
         // Random Quality Generator
         if (!is_trending)
@@ -116,6 +115,14 @@ public class Video : MonoBehaviour {
         GetComponent<Image>().sprite = video[0];
 
         StartCoroutine(TimeLeft());
+
+        if (is_trending)
+            ai_manager.AddToTrending(this);
+        else
+        {
+            copyrighted = IsCopyrighted();
+        }
+
     }
 
     bool debugging = false;
@@ -167,12 +174,27 @@ public class Video : MonoBehaviour {
 
         Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
 
-        if (quality[0] && quality[1])
-            quality_slider.value -= 0.1f;
-        else if (quality[2] && quality[3])
-            quality_slider.value += 0.1f;
-
         entered_video = false;
         GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
+    }
+
+    bool IsCopyrighted()
+    {
+        for (int it = 0; it < ai_manager.trending_videos.Count; it++)
+        {
+            Video v = ai_manager.trending_videos[it];
+            for (int i = 0; i < 3; ++i)
+            {
+                for (int j = 0; j < 3; ++j)
+                {
+                    if (v.sprite_id[i] == sprite_id[j])
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }
