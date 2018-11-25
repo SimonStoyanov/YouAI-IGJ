@@ -11,6 +11,11 @@ public class AIManager : MonoBehaviour {
     public Slider copyright_slider;
     public Canvas VideoUI;
 
+    public Text PopValue;
+    public Text QValue;
+    public Text IValue;
+    public Text IMax;
+
     public int tick = 10;
     bool playing = true;
 
@@ -55,6 +60,8 @@ public class AIManager : MonoBehaviour {
                 quality_slider.value -= 3;
             else if (video.quality[2] && video.quality[3])
                 quality_slider.value += 3;
+
+            QValue.text = quality_slider.value.ToString();
 
             // Copyright
             if (video.copyrighted)
@@ -132,6 +139,8 @@ public class AIManager : MonoBehaviour {
             popularity_slider.value -= 1;
         else if (quality_value >= 71 && quality_value <= 100)
             popularity_slider.value -= 2;
+
+        PopValue.text = popularity_slider.value.ToString();
     }
 
     void TickCopyright()
@@ -157,6 +166,7 @@ public class AIManager : MonoBehaviour {
                     recovering_infringement = false;
             }
         }
+        IValue.text = copyright_slider.value.ToString();
 
     }
 
@@ -169,7 +179,7 @@ public class AIManager : MonoBehaviour {
 
         if (popularity_value >= 0 && popularity_value <= 10)
         {
-            if (random_spawn <= 6)
+            if (random_spawn <= 6)//70%
             {
                 //Spawn
                 GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();
@@ -177,7 +187,7 @@ public class AIManager : MonoBehaviour {
         }
         else if (popularity_value >= 11 && popularity_value <= 70)
         {
-            if (random_spawn <= 2)
+            if (random_spawn <= 4)//50%
             {
                 //Spawn
                 GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();
@@ -185,7 +195,7 @@ public class AIManager : MonoBehaviour {
         }
         else if (popularity_value >= 71 && popularity_value <= 100)
         {
-            if (random_spawn <= 4)
+            if (random_spawn <= 5)//60%
             {
                 //Spawn
                 GameObject.FindGameObjectWithTag("AITracker").GetComponent<MonkeyManager>().SpawnVideo();

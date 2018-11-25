@@ -223,7 +223,7 @@ public class Video : MonoBehaviour {
         string name;
 
         string[] base_names = { "Pixel", "Cat", "Wizard", "Mago", "Key", "Banana", "Platano", "Monkey", "Ventisca", "Fresco", "Pizza", "Timmy", "Knuckles", "CuatroDos", "Vapor", "Global", "Simio", "Primate", "Leyenda", "Papaya" };
-        string[] complement_names = { "Studios", "Arts", "United", "Interactive", "Enterteinment", "Media", "Solutions", "Industries", "Productions", "Games" };
+        string[] complement_names = { "Studios", "Arts", "United", "Interactive", "Entertainment", "Media", "Solutions", "Industries", "Productions", "Games" };
 
         int name_id = Random.Range(0, base_names.Length);
 
