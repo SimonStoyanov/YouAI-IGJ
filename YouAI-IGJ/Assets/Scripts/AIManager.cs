@@ -200,7 +200,7 @@ public class AIManager : MonoBehaviour {
         video.SetEntered(true);
         video_manager.rendered_video = video;
 
-        video.GenerateData();
+        // video.GenerateData();
     }
 
     public void BlockCanvas()

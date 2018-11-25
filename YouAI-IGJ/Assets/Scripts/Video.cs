@@ -45,6 +45,9 @@ public class Video : MonoBehaviour {
     private void Awake()
     {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+
+        if (GetComponentInChildren<Slider>() != null)
+            GetComponentInChildren<Slider>().maxValue = global_time;
     }
 
     public void GenerateData () {
@@ -133,8 +136,6 @@ public class Video : MonoBehaviour {
 
         sprite_in_use = video[0];
 
-        //StartCoroutine(TimeLeft());
-
         if (is_trending)
         {
             ai_manager.AddToTrending(this);
@@ -167,6 +168,9 @@ public class Video : MonoBehaviour {
             automatic_sequence = false;
             StartCoroutine(VideoSequence());
         }
+
+        if (is_trending)
+            UpdateTrendingSlider();
 
         if (timer > 0)
             TimeLeft();
@@ -272,5 +276,10 @@ public class Video : MonoBehaviour {
     public void SetEntered(bool name)
     {
         entered_video = name;
+    }
+
+    private void UpdateTrendingSlider()
+    {
+        GetComponentInChildren<Slider>().value = timer;
     }
 }
