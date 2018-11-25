@@ -1321,8 +1321,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193300746629746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.028, y: 0.408, z: 0}
-  m_LocalScale: {x: 0.094863, y: 0.094863, z: 0.094863}
+  m_LocalPosition: {x: -0.028, y: 0.4452, z: 0}
+  m_LocalScale: {x: 2.1518457, y: 2.1518457, z: 2.1518457}
   m_Children: []
   m_Father: {fileID: 4671035451231712}
   m_RootOrder: 3
@@ -1791,8 +1791,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303174529090278}
   m_LocalRotation: {x: -0, y: 0.9931227, z: -0, w: 0.117078245}
-  m_LocalPosition: {x: 20.858847, y: 31.806992, z: 20.107}
-  m_LocalScale: {x: 6.4705195, y: 6.4705176, z: 6.4705195}
+  m_LocalPosition: {x: 20.586, y: 31.969, z: 19.895}
+  m_LocalScale: {x: 4.4238825, y: 4.423881, z: 4.4238825}
   m_Children:
   - {fileID: 4479881208668778}
   m_Father: {fileID: 0}
@@ -1974,8 +1974,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965356127993578}
   m_LocalRotation: {x: -0, y: 0.0000030323863, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0048, y: -0.075689666, z: 0.0361}
-  m_LocalScale: {x: 0.8615385, y: 0.8615385, z: 0.8615385}
+  m_LocalPosition: {x: 0.003, y: -0.078, z: 0.027}
+  m_LocalScale: {x: 0.896525, y: 0.896525, z: 0.896525}
   m_Children:
   - {fileID: 4390205034144058}
   - {fileID: 4817525751805228}
@@ -2481,7 +2481,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a5c19eed50475c74291fe23173b6fdda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2521,7 +2521,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193300746629746}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 632dfbca527e6aa47a75b1c29353dd57, type: 3}
 --- !u!33 &33927265224047862
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2573,7 +2573,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6914b90d22de7014d854c32df3d41734, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2656,10 +2656,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.054086003
+  m_Height: 0.13623841
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.030326225, z: 0}
 --- !u!137 &137105295552250186
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
