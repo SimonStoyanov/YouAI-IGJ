@@ -10,6 +10,7 @@ TagManager:
   - AITracker
   - Monkeys
   - SecondsText
+  - VideoUI
   layers:
   - Default
   - TransparentFX

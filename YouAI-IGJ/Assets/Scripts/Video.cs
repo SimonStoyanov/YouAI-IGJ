@@ -19,6 +19,7 @@ public class Video : MonoBehaviour {
     public float slide_time = 2f;
 
     // 144p, 360p, 720p, 1080p
+    public int rand_quality = 0;
     public bool[] quality = new bool[4];
     public Category category = Category.Entertainment;
     public string author = "name";
@@ -28,24 +29,22 @@ public class Video : MonoBehaviour {
 
     int num_sprites = 42;
     public int[] sprite_id = new int[3];
+    public Sprite sprite_in_use;
     public Sprite[] video = new Sprite[3];
 
     bool entered_video = false;
+    bool automatic_sequence = false;
+    bool sequence_on = false;
     int video_id_shown = 0;
 
     AIManager ai_manager;
 
-    public Image rendered_video;
-    public Slider slider_video;
-
-    float timer = 0f;
-    int time_left = 0;
+    public float timer = 0f;
+    public int time_left = 0;
 
     private void Awake()
     {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
-        timer = global_time;
-        time_left = (int)timer;
     }
 
     public void GenerateData () {
@@ -101,7 +100,8 @@ public class Video : MonoBehaviour {
         // Random Quality Generator
         if (!is_trending)
         {
-            int rand_quality = Random.Range(0, 3);
+            rand_quality = Random.Range(0, 3);
+
             switch (rand_quality)
             {
                 case 0:
@@ -114,7 +114,12 @@ public class Video : MonoBehaviour {
                     quality[0] = quality[1] = quality[2] = quality[3] = true;
                     break;
             }
-        }       
+        }
+        else
+        {
+            rand_quality = 2;
+            quality[0] = quality[1] = quality[2] = quality[3] = true;
+        }
 
         // Sprite Setter by ID
         for (int i = 0; i < 3; ++i)
@@ -126,19 +131,22 @@ public class Video : MonoBehaviour {
         if (GetComponent<Image>() != null)
             GetComponent<Image>().sprite = video[0];
 
+        sprite_in_use = video[0];
+
         //StartCoroutine(TimeLeft());
 
         if (is_trending)
+        {
             ai_manager.AddToTrending(this);
+            automatic_sequence = true;
+        }
         else
         {
             copyrighted = IsCopyrighted();
         }
 
-        if (is_trending)
-        {
-            StartCoroutine(VideoSequence());
-        }
+        timer = global_time;
+        time_left = (int)timer;
     }
 
     bool debugging = false;
@@ -153,13 +161,15 @@ public class Video : MonoBehaviour {
         }
 
         // Video
-        if ((!entered_video && rendered_video != null))
+        if (!sequence_on && (entered_video || automatic_sequence))
         {
-            entered_video = true;
+            sequence_on = true;
+            automatic_sequence = false;
             StartCoroutine(VideoSequence());
         }
 
-        TimeLeft();
+        if (timer > 0)
+            TimeLeft();
     }
 
     void Debugging()
@@ -174,7 +184,7 @@ public class Video : MonoBehaviour {
 
     IEnumerator VideoSequence()
     {       
-        while (entered_video)
+        while (sequence_on)
         {
             yield return new WaitForSecondsRealtime(slide_time);
             if (video_id_shown == 2) video_id_shown = 0;
@@ -183,8 +193,7 @@ public class Video : MonoBehaviour {
             if (GetComponent<Image>() != null)
                 GetComponent<Image>().sprite = video[video_id_shown];
 
-            if (rendered_video != null)
-                rendered_video.sprite = video[video_id_shown];
+            sprite_in_use = video[video_id_shown];
         }
     }
 
@@ -195,47 +204,21 @@ public class Video : MonoBehaviour {
         timer -= dt;
         time_left = (int) timer;
 
-        if (!is_trending && slider_video != null)
-        {
-            slider_video.value = timer;
-            slider_video.GetComponentInChildren<Text>().text = time_left.ToString();
-        }
-
-        entered_video = false;
-
         if (timer <= 0f && !is_trending)
         {
             GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
             if (GetComponent<Image>() != null)
                 GetComponent<Image>().sprite = null;
-            if (rendered_video != null)
-                rendered_video = null;
+
+            entered_video = false;
+            sequence_on = false;
+
             EraseVideo();
+            StopCoroutine(VideoSequence());
 
             GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
         }
     }
-
-    //IEnumerator TimeLeft()
-    //{
-    //    yield return new WaitForSecondsRealtime(global_time);
-
-    //    Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
-
-    //    entered_video = false;
-
-    //    if (!is_trending)
-    //    {
-    //        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
-    //        if (GetComponent<Image>() != null)
-    //            GetComponent<Image>().sprite = null;
-    //        if (rendered_video != null)
-    //            rendered_video = null;
-    //        EraseVideo();
-
-    //        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
-    //    }
-    //}
 
     string GenerateName()
     {
@@ -281,5 +264,10 @@ public class Video : MonoBehaviour {
         video[2] = null;
 
         
+    }
+
+    public void SetEntered(bool name)
+    {
+        entered_video = name;
     }
 }

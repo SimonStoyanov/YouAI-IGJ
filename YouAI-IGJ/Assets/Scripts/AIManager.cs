@@ -192,9 +192,11 @@ public class AIManager : MonoBehaviour {
 
     public void RenderCanvas(Video video)
     {
+        VideoUIManager video_manager = GameObject.FindGameObjectWithTag("VideoUI").GetComponent<VideoUIManager>();
         VideoUI.enabled = true;
-        video.rendered_video = VideoUI.gameObject.GetComponentInChildren<Image>();
-        video.slider_video = VideoUI.gameObject.GetComponentInChildren<Slider>();
+        video.GenerateData();
+        video.SetEntered(true);
+        video_manager.rendered_video = video;
     }
 
     public void BlockCanvas()
