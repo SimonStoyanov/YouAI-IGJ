@@ -1,29 +1,30 @@
 fileFormatVersion: 2
-guid: bb7fed8aade34f04f98f066616edb256
+guid: 861751fa96d6a3a4f85a966ab9a8884a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: group2
-    100002: pCube20
-    100004: pCylinder1
-    100006: pCylinder2
-    100008: pCylinder3
-    100010: pCylinder4
-    100012: //RootNode
-    400000: group2
-    400002: pCube20
-    400004: pCylinder1
-    400006: pCylinder2
-    400008: pCylinder3
-    400010: pCylinder4
-    400012: //RootNode
-    2100000: lambert1
-    2300000: pCube20
+    100000: //RootNode
+    100002: group2
+    100004: pCube100
+    100006: pCylinder1
+    100008: pCylinder2
+    100010: pCylinder3
+    100012: pCylinder4
+    400000: //RootNode
+    400002: group2
+    400004: pCube100
+    400006: pCylinder1
+    400008: pCylinder2
+    400010: pCylinder3
+    400012: pCylinder4
+    2100000: blinn3
+    2100002: blinn4
+    2300000: pCube100
     2300002: pCylinder1
     2300004: pCylinder2
     2300006: pCylinder3
     2300008: pCylinder4
-    3300000: pCube20
+    3300000: pCube100
     3300002: pCylinder1
     3300004: pCylinder2
     3300006: pCylinder3
@@ -31,12 +32,12 @@ ModelImporter:
     4300000: pCylinder4
     4300002: pCylinder2
     4300004: pCylinder3
-    4300006: pCube20
-    4300008: pCylinder1
-    7400000: Levantarse
-    7400002: Static
-    7400004: Vuelta
-    7400006: Idle
+    4300006: pCylinder1
+    4300008: pCube100
+    7400000: Idle
+    7400002: Leventarse
+    7400004: Static
+    7400006: Volver
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -67,7 +68,35 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Levantarse
+      name: Idle
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Leventarse
       takeName: Take 001
       firstFrame: 1
       lastFrame: 53
@@ -105,34 +134,6 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Vuelta
-      takeName: Take 001
-      firstFrame: 57
-      lastFrame: 90
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -151,18 +152,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle
+      name: Volver
       takeName: Take 001
-      firstFrame: 90
-      lastFrame: 120
+      firstFrame: 57
+      lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 2
+      cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
