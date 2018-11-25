@@ -35,6 +35,8 @@ public class Video : MonoBehaviour {
 
     AIManager ai_manager;
 
+    public Image rendered_video;
+
     private void Awake()
     {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
@@ -115,7 +117,8 @@ public class Video : MonoBehaviour {
             video[i] = Resources.Load<Sprite>(sprite_path);
         }
 
-        GetComponent<Image>().sprite = video[0];
+        if (GetComponent<Image>() != null)
+            GetComponent<Image>().sprite = video[0];
 
         StartCoroutine(TimeLeft());
 
@@ -126,6 +129,10 @@ public class Video : MonoBehaviour {
             copyrighted = IsCopyrighted();
         }
 
+        if (is_trending)
+        {
+            StartCoroutine(VideoSequence());
+        }
     }
 
     bool debugging = false;
@@ -140,7 +147,7 @@ public class Video : MonoBehaviour {
         }
 
         // Video
-        if (!entered_video && is_trending)
+        if ((!entered_video && rendered_video != null))
         {
             entered_video = true;
             StartCoroutine(VideoSequence());
@@ -167,6 +174,9 @@ public class Video : MonoBehaviour {
 
             if (GetComponent<Image>() != null)
                 GetComponent<Image>().sprite = video[video_id_shown];
+
+            if (rendered_video != null)
+                rendered_video.sprite = video[video_id_shown];
         }
     }
 
@@ -181,8 +191,13 @@ public class Video : MonoBehaviour {
         if (!is_trending)
         {
             GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
-            GetComponent<Image>().sprite = null;
+            if (GetComponent<Image>() != null)
+                GetComponent<Image>().sprite = null;
+            if (rendered_video != null)
+                rendered_video = null;
             EraseVideo();
+
+            GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
         }
     }
 
@@ -229,6 +244,6 @@ public class Video : MonoBehaviour {
         video[1] = null;
         video[2] = null;
 
-        GenerateData();
+        
     }
 }

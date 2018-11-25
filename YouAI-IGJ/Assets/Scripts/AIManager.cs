@@ -193,5 +193,11 @@ public class AIManager : MonoBehaviour {
     public void RenderCanvas(Video video)
     {
         VideoUI.enabled = true;
+        video.rendered_video = VideoUI.gameObject.GetComponentInChildren<Image>();
+    }
+
+    public void BlockCanvas()
+    {
+        VideoUI.enabled = false;
     }
 }

@@ -35,6 +35,7 @@ public class MonkeyManager : MonoBehaviour {
             return;
 
         int rand_canvas = Random.Range(0, canvas_to_render.Count);
-        monkey_canvas[rand_canvas].enabled = true;     
+        monkey_canvas[rand_canvas].enabled = true;
+        monkey_video[rand_canvas].GenerateData();
     }
 }
