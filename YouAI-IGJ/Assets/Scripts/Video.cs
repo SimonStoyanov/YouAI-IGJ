@@ -263,6 +263,7 @@ public class Video : MonoBehaviour {
         entered_video = false;
         sequence_on = false;
 
+        sprite_in_use = null;
         video[0] = null;
         video[1] = null;
         video[2] = null;
@@ -270,7 +271,8 @@ public class Video : MonoBehaviour {
         StopCoroutine(VideoSequence());
 
         ai_manager.GetComponent<AIManager>().BlockCanvas();
-        GetComponentInChildren<Canvas>().enabled = false;
+        GameObject capsule = GetComponentInChildren<Button3D>().gameObject;
+        capsule.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void SetEntered(bool name)

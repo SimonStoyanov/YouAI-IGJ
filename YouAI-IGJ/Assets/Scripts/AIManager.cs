@@ -196,10 +196,12 @@ public class AIManager : MonoBehaviour {
     public void RenderCanvas(Video video)
     {
         VideoUIManager video_manager = GameObject.FindGameObjectWithTag("VideoUI").GetComponent<VideoUIManager>();
-        VideoUI.enabled = true;
-        video.SetEntered(true);
-        video_manager.rendered_video = video;
-
+        if (video.sprite_in_use != null)
+        {
+            VideoUI.enabled = true;
+            video.SetEntered(true);
+            video_manager.rendered_video = video;
+        }
         // video.GenerateData();
     }
 
