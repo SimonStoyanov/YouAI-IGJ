@@ -9,6 +9,7 @@ TagManager:
   - CopyrightAI
   - AITracker
   - Monkeys
+  - SecondsText
   layers:
   - Default
   - TransparentFX

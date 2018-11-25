@@ -513,6 +513,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &77355388
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,6 +648,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &118025173
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +743,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &126049082
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +921,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &168052500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1433,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &178900663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1718,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &198096236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,6 +2788,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &317328843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,6 +4885,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &605447253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cf1b7872d7583f346b3d69a4ebf01d17,
@@ -4907,6 +4915,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &620410595
 Prefab:
   m_ObjectHideFlags: 0
@@ -5209,6 +5218,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &654692853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,6 +6447,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &837758287
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,6 +7336,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1012724234
 GameObject:
   m_ObjectHideFlags: 0
@@ -7682,6 +7694,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1054731071
 GameObject:
   m_ObjectHideFlags: 0
@@ -7776,6 +7789,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1055707604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8231,6 +8245,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &1169500077
 Prefab:
   m_ObjectHideFlags: 0
@@ -10401,6 +10416,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1378091910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cf1b7872d7583f346b3d69a4ebf01d17,
@@ -10430,6 +10446,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1383099024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,6 +10613,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &1392108857
 Prefab:
   m_ObjectHideFlags: 0
@@ -11053,6 +11071,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1447807598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cf1b7872d7583f346b3d69a4ebf01d17,
@@ -11082,6 +11101,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1475548548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11581,6 +11601,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1572797671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cf1b7872d7583f346b3d69a4ebf01d17,
@@ -11610,6 +11631,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1583938602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12220,6 +12242,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &1656533789
 Prefab:
   m_ObjectHideFlags: 0
@@ -12571,6 +12594,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1694502678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cf1b7872d7583f346b3d69a4ebf01d17,
@@ -12600,6 +12624,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1701585314
 GameObject:
   m_ObjectHideFlags: 0
@@ -14496,6 +14521,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &1885386435
 Prefab:
   m_ObjectHideFlags: 0
@@ -15074,7 +15100,7 @@ Prefab:
     - target: {fileID: 223598937632043474, guid: 153565fb309a7824eaa76ec28fe5a1d4,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224819915303745102, guid: 153565fb309a7824eaa76ec28fe5a1d4,
         type: 2}
@@ -15100,6 +15126,10 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603198303897798, guid: 153565fb309a7824eaa76ec28fe5a1d4, type: 2}
+      propertyPath: m_TagString
+      value: SecondsText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153565fb309a7824eaa76ec28fe5a1d4, type: 2}
@@ -15212,6 +15242,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &1955499355
 GameObject:
   m_ObjectHideFlags: 0
@@ -15524,6 +15555,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1001 &2014478888
 Prefab:
   m_ObjectHideFlags: 0
@@ -15737,6 +15769,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &2035888394
 GameObject:
   m_ObjectHideFlags: 0
@@ -16427,6 +16460,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rendered_video: {fileID: 0}
+  slider_video: {fileID: 0}
 --- !u!1 &2123920512
 GameObject:
   m_ObjectHideFlags: 0
