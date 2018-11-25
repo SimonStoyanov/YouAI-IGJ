@@ -55,7 +55,7 @@ public class MonkeyManager : MonoBehaviour
         audio_random_monkeys.PlayRandomMonkey();
         monkey_video[rand_canvas].GenerateData();
         if (!spawn_critique && !spawn_comedy)
-            monkey_video[rand_canvas].category = Video.Category.Entertainment;
+            monkey_video[rand_canvas].category = Video.Category.Entretenimiento;
         if (spawn_critique && !spawn_comedy)
             monkey_video[rand_canvas].category = (Video.Category) Random.Range(0, 2);
         

@@ -30,6 +30,10 @@ public class AIManager : MonoBehaviour {
 
     TrendingManager trending_manager = null;
 
+    public AudioSource copyrighted_sent;
+
+    public Text Numero_Dias_Texto;
+
     private void Awake()
     {
         trending_manager = GetComponent<TrendingManager>();
@@ -74,6 +78,7 @@ public class AIManager : MonoBehaviour {
             if (video.copyrighted)
             {
                 copyright_slider.value += 1;
+                copyrighted_sent.Play();
                 infringement_ticks = 0;
                 recovering_infringement = true;
                 days_left = 3;
@@ -155,7 +160,10 @@ public class AIManager : MonoBehaviour {
         ticks_done++;
 
         if (ticks_done % ticks_a_day == 0)
+        {
             days++;
+            Numero_Dias_Texto.text = days.ToString();
+        }
 
         if (recovering_infringement)
         {

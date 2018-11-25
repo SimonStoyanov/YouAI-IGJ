@@ -8,9 +8,9 @@ public class Video : MonoBehaviour {
     [HideInInspector]
     public enum Category
     {
-        Entertainment,
-        Critique,
-        Comedy,
+        Entretenimiento,
+        Critica,
+        Comedia,
 
         NULL
     }
@@ -21,7 +21,7 @@ public class Video : MonoBehaviour {
     // 144p, 360p, 720p, 1080p
     public int rand_quality = 0;
     public bool[] quality = new bool[4];
-    public Category category = Category.Entertainment;
+    public Category category = Category.Entretenimiento;
     public string author = "name";
     public bool copyrighted = false;
 
@@ -227,7 +227,7 @@ public class Video : MonoBehaviour {
         string name;
 
         string[] base_names = { "Pixel", "Cat", "Wizard", "Mago", "Key", "Banana", "Platano", "Monkey", "Ventisca", "Fresco", "Pizza", "Timmy", "Knuckles", "CuatroDos", "Vapor", "Global", "Simio", "Primate", "Leyenda", "Papaya" };
-        string[] complement_names = { "Studios", "Arts", "United", "Interactive", "Entertainment", "Media", "Solutions", "Industries", "Productions", "Games" };
+        string[] complement_names = { "Studios", "Arts", "United", "Interactive", "Entretenimiento", "Media", "Solutions", "Industries", "Productions", "Games" };
 
         int name_id = Random.Range(0, base_names.Length);
 
@@ -241,11 +241,11 @@ public class Video : MonoBehaviour {
     bool IsCopyrighted()
     {
         int copy_crit = 0;
-        int copy_comedy = 0;
+        int copy_Comedia = 0;
         for (int it = 0; it < ai_manager.trending_videos.Count; it++)
         {
             Video v = ai_manager.trending_videos[it];
-            int copy_comedy_repeat = 0;
+            int copy_Comedia_repeat = 0;
 
             for (int i = 0; i < 3; ++i)
             {
@@ -257,15 +257,15 @@ public class Video : MonoBehaviour {
                         {
                             switch (category)
                             {
-                                case Category.Entertainment:
+                                case Category.Entretenimiento:
                                     return true;
-                                case Category.Critique:
+                                case Category.Critica:
                                     copy_crit++;
                                     if (copy_crit >= 2) return true;
                                     break;
-                                case Category.Comedy:
-                                    copy_comedy++; copy_comedy_repeat++;
-                                    if (copy_comedy > 2 || copy_comedy_repeat >= 2) return true;
+                                case Category.Comedia:
+                                    copy_Comedia++; copy_Comedia_repeat++;
+                                    if (copy_Comedia > 2 || copy_Comedia_repeat >= 2) return true;
                                     break;
                             }                       
                         }

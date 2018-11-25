@@ -38,7 +38,7 @@ public class VideoUIManager : MonoBehaviour {
     private GameObject AcceptDeny;
 
     public Video rendered_video;
-
+    public AudioSource video_off_sound;
     // Use this for initialization
     void Start () {
         time_left = time_slider.GetComponent<Slider>();
@@ -72,6 +72,10 @@ public class VideoUIManager : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1))
         {
+            if(GetComponent<Canvas>().enabled == true)
+            {
+                video_off_sound.Play();
+            }
             GetComponent<Canvas>().enabled = false;
             rendered_video.SetEntered(false);
         }
@@ -118,15 +122,15 @@ public class VideoUIManager : MonoBehaviour {
     {
         if (Category == 0)
         {
-            category_text.GetComponent<Text>().text = "#Entertainment";
+            category_text.GetComponent<Text>().text = "#Entretenimiento";
         }
         else if (Category == 1)
         {
-            category_text.GetComponent<Text>().text = "#Comedy";
+            category_text.GetComponent<Text>().text = "#Comedia";
         }
         else if (Category == 2)
         {
-            category_text.GetComponent<Text>().text = "#Critic";
+            category_text.GetComponent<Text>().text = "#Critica";
         }
     }
 
