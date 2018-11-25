@@ -236,9 +236,13 @@ public class Video : MonoBehaviour {
 
     bool IsCopyrighted()
     {
+        int copy_crit = 0;
+        int copy_comedy = 0;
         for (int it = 0; it < ai_manager.trending_videos.Count; it++)
         {
             Video v = ai_manager.trending_videos[it];
+            int copy_comedy_repeat = 0;
+
             for (int i = 0; i < 3; ++i)
             {
                 for (int j = 0; j < 3; ++j)
@@ -246,7 +250,21 @@ public class Video : MonoBehaviour {
                     if (v.sprite_id[i] == sprite_id[j])
                     {
                         if (v.author != author)
-                            return true;
+                        {
+                            switch (category)
+                            {
+                                case Category.Entertainment:
+                                    return true;
+                                case Category.Critique:
+                                    copy_crit++;
+                                    if (copy_crit >= 2) return true;
+                                    break;
+                                case Category.Comedy:
+                                    copy_comedy++; copy_comedy_repeat++;
+                                    if (copy_comedy > 2 || copy_comedy_repeat >= 2) return true;
+                                    break;
+                            }                       
+                        }
                     }
                 }
             }
