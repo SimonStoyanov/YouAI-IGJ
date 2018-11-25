@@ -36,10 +36,16 @@ public class Video : MonoBehaviour {
     AIManager ai_manager;
 
     public Image rendered_video;
+    public Slider slider_video;
+
+    float timer = 0f;
+    int time_left = 0;
 
     private void Awake()
     {
         ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+        timer = global_time;
+        time_left = (int)timer;
     }
 
     public void GenerateData () {
@@ -120,7 +126,7 @@ public class Video : MonoBehaviour {
         if (GetComponent<Image>() != null)
             GetComponent<Image>().sprite = video[0];
 
-        StartCoroutine(TimeLeft());
+        //StartCoroutine(TimeLeft());
 
         if (is_trending)
             ai_manager.AddToTrending(this);
@@ -152,6 +158,8 @@ public class Video : MonoBehaviour {
             entered_video = true;
             StartCoroutine(VideoSequence());
         }
+
+        TimeLeft();
     }
 
     void Debugging()
@@ -180,15 +188,22 @@ public class Video : MonoBehaviour {
         }
     }
 
-    IEnumerator TimeLeft()
+    void TimeLeft()
     {
-        yield return new WaitForSecondsRealtime(global_time);
+        float dt = Time.deltaTime;
 
-        Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
+        timer -= dt;
+        time_left = (int) timer;
+
+        if (!is_trending && slider_video != null)
+        {
+            slider_video.value = timer;
+            slider_video.GetComponentInChildren<Text>().text = time_left.ToString();
+        }
 
         entered_video = false;
 
-        if (!is_trending)
+        if (timer <= 0f && !is_trending)
         {
             GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
             if (GetComponent<Image>() != null)
@@ -200,6 +215,27 @@ public class Video : MonoBehaviour {
             GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
         }
     }
+
+    //IEnumerator TimeLeft()
+    //{
+    //    yield return new WaitForSecondsRealtime(global_time);
+
+    //    Slider quality_slider   = GameObject.FindGameObjectWithTag("QualityAI").GetComponent<Slider>();
+
+    //    entered_video = false;
+
+    //    if (!is_trending)
+    //    {
+    //        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
+    //        if (GetComponent<Image>() != null)
+    //            GetComponent<Image>().sprite = null;
+    //        if (rendered_video != null)
+    //            rendered_video = null;
+    //        EraseVideo();
+
+    //        GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
+    //    }
+    //}
 
     string GenerateName()
     {
