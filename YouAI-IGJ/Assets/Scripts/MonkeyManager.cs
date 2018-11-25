@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class MonkeyManager : MonoBehaviour
 {
 
     GameObject[] monkeys;
     Video[] monkey_video;
     MeshRenderer[] monkey_renderer;
-
+    public AudioMenuManage audio_random_monkeys;
     int seconds_a_day = 180;
 
     // primeros 2 dias -> spawn only entertainment
@@ -52,6 +52,7 @@ public class MonkeyManager : MonoBehaviour
 
         int rand_canvas = Random.Range(0, canvas_to_render.Count);
         monkey_renderer[rand_canvas].enabled = true;
+        audio_random_monkeys.PlayRandomMonkey();
         monkey_video[rand_canvas].GenerateData();
         if (!spawn_critique && !spawn_comedy)
             monkey_video[rand_canvas].category = Video.Category.Entertainment;
