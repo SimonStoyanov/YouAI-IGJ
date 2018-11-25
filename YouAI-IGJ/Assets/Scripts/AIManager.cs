@@ -28,6 +28,12 @@ public class AIManager : MonoBehaviour {
     int ticks_to_recover = 90;
     int days_left = 3;
 
+    int bad_videos = 0;
+    int good_videos = 0;
+    int entertainment_num = 0;
+    int critique_num = 0;
+    int comedy_num = 0;
+
     TrendingManager trending_manager = null;
 
     public AudioSource copyrighted_sent;
@@ -42,6 +48,21 @@ public class AIManager : MonoBehaviour {
     private void Start()
     {
         StartCoroutine(Tick());
+    }
+
+    private void Update()
+    {
+        if (popularity_slider.value <= 0 || quality_slider.value <= 0 || copyright_slider.value >= 5)
+        {
+            PlayerPrefs.SetInt("Days", days);
+            PlayerPrefs.SetInt("BadVideos", bad_videos);
+            PlayerPrefs.SetInt("GoodVideos", good_videos);
+            PlayerPrefs.SetInt("Entertainment", entertainment_num);
+            PlayerPrefs.SetInt("Critique", critique_num);
+            PlayerPrefs.SetInt("Comedy", comedy_num);
+
+            GetComponent<SceneMenuManage>().LoadScene("Score Menu");
+        }
     }
 
     public void AddToTrending(Video video)
@@ -82,6 +103,23 @@ public class AIManager : MonoBehaviour {
                 infringement_ticks = 0;
                 recovering_infringement = true;
                 days_left = 3;
+
+                bad_videos++;
+            }
+            else
+                good_videos++;
+
+            switch (video.category)
+            {
+                case Video.Category.Entretenimiento:
+                    entertainment_num++;
+                    break;
+                case Video.Category.Critica:
+                    critique_num++;
+                    break;
+                case Video.Category.Comedia:
+                    comedy_num++;
+                    break;
             }
         }
         else

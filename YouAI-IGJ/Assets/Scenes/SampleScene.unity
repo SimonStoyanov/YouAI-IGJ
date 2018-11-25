@@ -1501,6 +1501,7 @@ GameObject:
   - component: {fileID: 168052502}
   - component: {fileID: 168052501}
   - component: {fileID: 168052504}
+  - component: {fileID: 168052505}
   m_Layer: 0
   m_Name: Managers
   m_TagString: AITracker
@@ -1578,6 +1579,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio_random_monkeys: {fileID: 500266158}
+--- !u!114 &168052505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168052500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb9c5b1325970b45a92de9abaf5f657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0

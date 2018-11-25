@@ -14,14 +14,12 @@ public class GetScore : MonoBehaviour {
     public Text critique;
     public Text comedy;
 
-    public Text score;
-
     private void Start()
     {
-        int _days = PlayerPrefs.GetInt("Score");
-        int _all_videos = PlayerPrefs.GetInt("All Videos");
-        int _good_videos = PlayerPrefs.GetInt("Good Videos");
-        int _bad_videos = _all_videos - _good_videos;
+        int _days = PlayerPrefs.GetInt("Days");
+        int _bad_videos = PlayerPrefs.GetInt("BadVideos");
+        int _good_videos = PlayerPrefs.GetInt("GoodVideos");
+        int _all_videos = _bad_videos + _good_videos;
 
         int _entertainment = PlayerPrefs.GetInt("Entertainment");
         int _critique = PlayerPrefs.GetInt("Critique");
@@ -34,8 +32,6 @@ public class GetScore : MonoBehaviour {
         entertainment.text = _entertainment.ToString();
         critique.text = _critique.ToString();
         comedy.text = _comedy.ToString();
-
-        //score.text = all_videos.ToString();
     }
 
 }
