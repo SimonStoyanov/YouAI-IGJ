@@ -1791,13 +1791,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303174529090278}
   m_LocalRotation: {x: -0, y: 0.9931227, z: -0, w: 0.117078245}
-  m_LocalPosition: {x: 20.586, y: 31.969, z: 19.895}
-  m_LocalScale: {x: 4.4238825, y: 4.423881, z: 4.4238825}
+  m_LocalPosition: {x: 15.45, y: 31.828, z: 24.752846}
+  m_LocalScale: {x: 5.629354, y: 5.6293526, z: 5.629354}
   m_Children:
   - {fileID: 4479881208668778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 166.553, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -14, z: 0}
 --- !u!4 &4573590466200696
 Transform:
   m_ObjectHideFlags: 1
@@ -2640,6 +2640,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 114504276343346274}
           m_ObjectArgumentAssemblyTypeName: Video, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
