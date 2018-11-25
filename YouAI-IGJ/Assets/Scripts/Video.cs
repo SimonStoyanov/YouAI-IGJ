@@ -216,6 +216,10 @@ public class Video : MonoBehaviour {
 
             EraseVideo();
         }
+        else if (timer <= 0f && is_trending)
+        {
+            GenerateData();
+        }
     }
 
     string GenerateName()
@@ -288,7 +292,7 @@ public class Video : MonoBehaviour {
 
         StopCoroutine(VideoSequence());
 
-        ai_manager.GetComponent<AIManager>().BlockCanvas();
+        ai_manager.GetComponent<AIManager>().BlockCanvas(this);
         GameObject capsule = GetComponentInChildren<Button3D>().gameObject;
         capsule.GetComponent<MeshRenderer>().enabled = false;
     }

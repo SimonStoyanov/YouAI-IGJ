@@ -17,10 +17,10 @@ public class AIManager : MonoBehaviour {
     public Text IMax;
 
     public int tick = 10;
-    bool playing = true;
+    public bool playing = true;
 
-    int ticks_done = 0;
-    int ticks_a_day = 30;
+    public int ticks_done = 0;
+    public int ticks_a_day = 30;
     public int days = 0;
 
     bool recovering_infringement = false;
@@ -28,9 +28,15 @@ public class AIManager : MonoBehaviour {
     int ticks_to_recover = 90;
     int days_left = 3;
 
+    TrendingManager trending_manager = null;
+
+    private void Awake()
+    {
+        trending_manager = GetComponent<TrendingManager>();
+    }
+
     private void Start()
     {
-        //CreateVideo(false, 30);
         StartCoroutine(Tick());
     }
 
@@ -41,6 +47,7 @@ public class AIManager : MonoBehaviour {
 
 	public void SendReport(Video video, bool accept)
     {
+        video.timer = 0f;
         if (accept)
         {
             float pop_value = popularity_slider.value;
@@ -212,12 +219,11 @@ public class AIManager : MonoBehaviour {
             video.SetEntered(true);
             video_manager.rendered_video = video;
         }
-        // video.GenerateData();
     }
 
-    public void BlockCanvas()
+    public void BlockCanvas(Video video)
     {
         VideoUI.enabled = false;
-
+        video.SetEntered(false);
     }
 }
