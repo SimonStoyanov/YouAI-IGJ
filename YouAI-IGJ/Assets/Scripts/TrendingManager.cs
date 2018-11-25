@@ -23,8 +23,8 @@ public class TrendingManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         CreateTrendingVideo();
-        StartCoroutine(WaitAndCreate(seconds_a_day * 3));
-        StartCoroutine(WaitAndCreate(seconds_a_day * 5));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 2));
+        StartCoroutine(WaitAndCreate(seconds_a_day * 4));
         StartCoroutine(WaitAndCreate(seconds_a_day * 6));
         StartCoroutine(WaitAndCreate(seconds_a_day * 7));
         StartCoroutine(WaitAndCreate(seconds_a_day * 8));

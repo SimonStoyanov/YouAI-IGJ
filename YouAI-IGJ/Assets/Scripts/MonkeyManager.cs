@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonkeyManager : MonoBehaviour {
+public class MonkeyManager : MonoBehaviour
+{
 
     GameObject[] monkeys;
     Video[] monkey_video;
     MeshRenderer[] monkey_renderer;
+
+    int seconds_a_day = 180;
+
+    // primeros 2 dias -> spawn only entertainment
+    // a partir del 3 dia -> critique
+    // a partir del 5 comedia
+    bool spawn_critique = false;
+    bool spawn_comedy = false;
 
     private void Awake()
     {
@@ -16,10 +25,16 @@ public class MonkeyManager : MonoBehaviour {
 
         for (int i = 0; i < monkeys.Length; ++i)
         {
-            monkey_video[i]  = monkeys[i].GetComponent<Video>() as Video;
+            monkey_video[i] = monkeys[i].GetComponent<Video>() as Video;
             GameObject capsule = monkeys[i].GetComponentInChildren<Button3D>().gameObject;
             monkey_renderer[i] = capsule.GetComponent<MeshRenderer>();
         }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(WaitForCategory(seconds_a_day * 2, spawn_critique));
+        StartCoroutine(WaitForCategory(seconds_a_day * 4, spawn_comedy));
     }
 
     public void SpawnVideo()
@@ -38,5 +53,16 @@ public class MonkeyManager : MonoBehaviour {
         int rand_canvas = Random.Range(0, canvas_to_render.Count);
         monkey_renderer[rand_canvas].enabled = true;
         monkey_video[rand_canvas].GenerateData();
+        if (!spawn_critique && !spawn_comedy)
+            monkey_video[rand_canvas].category = Video.Category.Entertainment;
+        if (spawn_critique && !spawn_comedy)
+            monkey_video[rand_canvas].category = (Video.Category) Random.Range(0, 2);
+        
+    }
+
+    IEnumerator WaitForCategory(int i, bool spawn)
+    {
+        yield return new WaitForSecondsRealtime(i);
+        spawn = true;
     }
 }
