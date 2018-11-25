@@ -194,7 +194,6 @@ public class AIManager : MonoBehaviour {
     {
         VideoUIManager video_manager = GameObject.FindGameObjectWithTag("VideoUI").GetComponent<VideoUIManager>();
         VideoUI.enabled = true;
-        video.GenerateData();
         video.SetEntered(true);
         video_manager.rendered_video = video;
     }

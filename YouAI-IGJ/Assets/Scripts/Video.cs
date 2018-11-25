@@ -206,7 +206,10 @@ public class Video : MonoBehaviour {
 
         if (timer <= 0f && !is_trending)
         {
-            GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().SendReport(this);
+            AIManager ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+            
+            ai_manager.SendReport(this);
+
             if (GetComponent<Image>() != null)
                 GetComponent<Image>().sprite = null;
 
@@ -216,7 +219,9 @@ public class Video : MonoBehaviour {
             EraseVideo();
             StopCoroutine(VideoSequence());
 
-            GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>().BlockCanvas();
+            ai_manager.GetComponent<AIManager>().BlockCanvas();
+            GetComponentInChildren<Canvas>().enabled = false;
+
         }
     }
 
