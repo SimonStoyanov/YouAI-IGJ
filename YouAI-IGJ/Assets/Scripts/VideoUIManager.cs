@@ -73,6 +73,7 @@ public class VideoUIManager : MonoBehaviour {
         if (Input.GetMouseButtonDown(1))
         {
             GetComponent<Canvas>().enabled = false;
+            rendered_video.SetEntered(false);
         }
 	}
 

@@ -24,7 +24,8 @@ public class Button3D : MonoBehaviour {
         {
             if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject)
             {
-                OnClick.Invoke();
+                if (GameObject.FindGameObjectWithTag("VideoUI").GetComponent<Canvas>().enabled != false);
+                    OnClick.Invoke();
             }
         }
     }
