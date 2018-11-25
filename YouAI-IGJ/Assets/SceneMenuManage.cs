@@ -13,6 +13,7 @@ public class SceneMenuManage : MonoBehaviour {
 	void Update () {
 		
 	}
+
     public void LoadScene(string scene_name)
     {
         SceneManager.LoadScene(scene_name);
