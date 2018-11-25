@@ -34,6 +34,9 @@ public class VideoUIManager : MonoBehaviour {
     private GameObject category_text;
     Text category_txt;
 
+    [SerializeField]
+    private GameObject AcceptDeny;
+
     public Video rendered_video;
 
     // Use this for initialization
@@ -60,6 +63,11 @@ public class VideoUIManager : MonoBehaviour {
             video_to_render.sprite = rendered_video.sprite_in_use;
 
             SetQualities(rendered_video.rand_quality);
+
+            if (rendered_video.is_trending)
+                AcceptDeny.SetActive(false);
+            else
+                AcceptDeny.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(1))

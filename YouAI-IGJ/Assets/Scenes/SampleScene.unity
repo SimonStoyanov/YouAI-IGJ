@@ -847,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 318.1, y: -107.00193}
+  m_AnchoredPosition: {x: 318.1, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118025175
@@ -1359,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.001703, y: -107}
+  m_AnchoredPosition: {x: 17.001703, y: -90.99475}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196527956
@@ -3295,6 +3295,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cdf978876f6e245ad3b924a21616d7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &671016390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1993890784819428, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1909905260}
 --- !u!1 &673998924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,7 +5898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.0009, y: -107.00193}
+  m_AnchoredPosition: {x: -301.0009, y: -90.99668}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391326817
@@ -7809,6 +7814,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1993890784819428, guid: 153565fb309a7824eaa76ec28fe5a1d4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399836047014278, guid: 153565fb309a7824eaa76ec28fe5a1d4,
+        type: 2}
+      propertyPath: AcceptDeny
+      value: 
+      objectReference: {fileID: 671016390}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153565fb309a7824eaa76ec28fe5a1d4, type: 2}
   m_IsPrefabAsset: 0

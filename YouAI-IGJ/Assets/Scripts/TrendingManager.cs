@@ -42,6 +42,7 @@ public class TrendingManager : MonoBehaviour {
             if (trending_videos[i].video[0] == null)
             {
                 trending_videos[i].GenerateData();
+                ticks_left[i] = (int) trending_videos[i].global_time / 10;
                 StartCoroutine(Tick(i));
                 return;
             }
