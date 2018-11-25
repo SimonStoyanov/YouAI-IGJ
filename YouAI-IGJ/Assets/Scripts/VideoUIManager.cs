@@ -21,7 +21,6 @@ public class VideoUIManager : MonoBehaviour {
     [SerializeField]
     private GameObject quality_4_obj;
     private Text quality_4_txt;
-    bool do_once_quality = true;
 
     [SerializeField]
     private GameObject time_slider;
@@ -49,8 +48,8 @@ public class VideoUIManager : MonoBehaviour {
         quality_4_txt = quality_4_obj.GetComponent<Text>();
     }
 
-// Update is called once per frame
-void Update () {
+    // Update is called once per frame
+    void Update () {
         if (rendered_video != null)
         {
             category_txt.text = rendered_video.category.ToString();
@@ -63,6 +62,10 @@ void Update () {
             SetQualities(rendered_video.rand_quality);
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            GetComponent<Canvas>().enabled = false;
+        }
 	}
 
     public void ToogglePanel()
@@ -74,7 +77,6 @@ void Update () {
         else
         {
             QualityPanel.SetActive(true);
-            do_once_quality = true;
         }
     }
 
@@ -101,8 +103,6 @@ void Update () {
             quality_3_txt.color = Color.white;
             quality_4_txt.color = Color.white;
         }
-
-        do_once_quality = false;
     }
 
     public void SetCategory(int Category)//0 entertainment, 1 Comedy, 2 Critic
@@ -119,5 +119,21 @@ void Update () {
         {
             category_text.GetComponent<Text>().text = "#Critic";
         }
+    }
+
+    public void DenyVideo()
+    {
+        AIManager ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+
+        ai_manager.SendReport(rendered_video, false);
+        rendered_video.EraseVideo();
+    }
+
+    public void AcceptVideo()
+    {
+        AIManager ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
+
+        ai_manager.SendReport(rendered_video, true);
+        rendered_video.EraseVideo();
     }
 }

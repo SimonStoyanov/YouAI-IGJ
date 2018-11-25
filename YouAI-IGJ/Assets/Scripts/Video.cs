@@ -208,20 +208,9 @@ public class Video : MonoBehaviour {
         {
             AIManager ai_manager = GameObject.FindGameObjectWithTag("AITracker").GetComponent<AIManager>();
             
-            ai_manager.SendReport(this);
-
-            if (GetComponent<Image>() != null)
-                GetComponent<Image>().sprite = null;
-
-            entered_video = false;
-            sequence_on = false;
+            ai_manager.SendReport(this, true);
 
             EraseVideo();
-            StopCoroutine(VideoSequence());
-
-            ai_manager.GetComponent<AIManager>().BlockCanvas();
-            GetComponentInChildren<Canvas>().enabled = false;
-
         }
     }
 
@@ -262,13 +251,22 @@ public class Video : MonoBehaviour {
         return false;
     }
 
-    void EraseVideo()
+    public void EraseVideo()
     {
+        if (GetComponent<Image>() != null)
+            GetComponent<Image>().sprite = null;
+
+        entered_video = false;
+        sequence_on = false;
+
         video[0] = null;
         video[1] = null;
         video[2] = null;
 
-        
+        StopCoroutine(VideoSequence());
+
+        ai_manager.GetComponent<AIManager>().BlockCanvas();
+        GetComponentInChildren<Canvas>().enabled = false;
     }
 
     public void SetEntered(bool name)
