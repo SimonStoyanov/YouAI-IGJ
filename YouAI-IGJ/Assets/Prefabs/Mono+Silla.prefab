@@ -368,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565322508079720}
   - component: {fileID: 95937831690122962}
+  - component: {fileID: 114065911532785042}
   m_Layer: 0
   m_Name: Mono+Silla
   m_TagString: Untagged
@@ -1810,9 +1811,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303174529090278}
-  m_LocalRotation: {x: 0, y: 0.9931227, z: 0, w: 0.117078245}
-  m_LocalPosition: {x: 2.978, y: 0.32663, z: -5.918}
-  m_LocalScale: {x: 6.4705176, y: 6.4705176, z: 6.4705176}
+  m_LocalRotation: {x: -0, y: 0.9931227, z: -0, w: 0.117078245}
+  m_LocalPosition: {x: 20.858847, y: 31.806992, z: 19.825916}
+  m_LocalScale: {x: 6.4705195, y: 6.4705176, z: 6.4705195}
   m_Children:
   - {fileID: 4479881208668778}
   m_Father: {fileID: 0}
@@ -2557,6 +2558,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114065911532785042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303174529090278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb79814a66de5d34f8f0042eddac0d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monkey: {fileID: 95469166516061722}
+  chair: {fileID: 95937831690122962}
+  video: {fileID: 114504276343346274}
 --- !u!114 &114280172744101792
 MonoBehaviour:
   m_ObjectHideFlags: 1
